@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-nlp
+  labels:
+    app: simple-nlp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simple-nlp
+  template:
+    metadata:
+      labels:
+        app: simple-nlp
+    spec:
+      containers:
+      - name: simple-nlp
+        image: lurah11/simple_nlp
+        ports:
+        - containerPort: 8000
+
